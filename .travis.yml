@@ -1,0 +1,8 @@
+dist: focal
+language: cpp
+
+script:
+  - cmake -S . -B build -DBUILD_TESTING=ON -DENABLE_COVERAGE=ON
+  - cmake --build build -- -j2
+  - cd build; ctest . -j2
+  - bash <(curl -s https://codecov.io/bash) -f '!/usr/*'
