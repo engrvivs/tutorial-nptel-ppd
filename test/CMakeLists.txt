@@ -14,6 +14,11 @@ add_library(${TARGET_TEST_STACK} OBJECT Stack.cxx)
 target_include_directories(${TARGET_TEST_STACK} PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_link_libraries(${TARGET_TEST_STACK} PRIVATE Catch2::Catch2)
 
+set(TARGET_TEST_COMPLEX "test_complex")
+add_library(${TARGET_TEST_COMPLEX} OBJECT Complex.cxx)
+target_include_directories(${TARGET_TEST_COMPLEX} PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(${TARGET_TEST_COMPLEX} PRIVATE Catch2::Catch2)
+
 set(TARGET_TEST_MAIN "test_main")
 add_library(${TARGET_TEST_MAIN} OBJECT main.cxx)
 target_link_libraries(${TARGET_TEST_MAIN} PRIVATE Catch2::Catch2)
@@ -25,7 +30,7 @@ if(ENABLE_COVERAGE)
     target_compile_options(${TARGET_TESTS} BEFORE PRIVATE --coverage)
     target_link_libraries(${TARGET_TESTS} PRIVATE --coverage)
 endif()
-target_link_libraries(${TARGET_TESTS} PRIVATE ${TARGET_TEST_MAIN} ${TARGET_TEST_STACK} $<TARGET_OBJECTS:stack>)
+target_link_libraries(${TARGET_TESTS} PRIVATE ${TARGET_TEST_MAIN} ${TARGET_TEST_STACK} $<TARGET_OBJECTS:stack> ${TARGET_TEST_COMPLEX} $<TARGET_OBJECTS:complex>)
 
 # Add Catch2 to CMake module path
 list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/contrib)

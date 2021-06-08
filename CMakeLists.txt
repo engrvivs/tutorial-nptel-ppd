@@ -7,7 +7,7 @@ else()
 endif()
 
 # IMP: Set the project name here
-set(MY_PROJECT_NAME "Stack")
+set(MY_PROJECT_NAME "NPTEL_Cpp")
 
 # Extract project's version
 set(${MY_PROJECT_NAME}_VERSION_REGEX "#define PROJECT_VERSION[ \t]+\"(.+)\"")
@@ -21,7 +21,7 @@ string(REGEX REPLACE ${${MY_PROJECT_NAME}_VERSION_REGEX} "\\1"
 message(STATUS "Project ${${MY_PROJECT_NAME}_VERSION_STRING}")
 # Set project info in the top-level CMake file
 project(${MY_PROJECT_NAME} VERSION ${${MY_PROJECT_NAME}_VERSION_STRING}
-            DESCRIPTION "Stack from NPTEL C++ - Prof. P. P. Das"
+            DESCRIPTION "NPTEL C++ - Prof. P. P. Das"
             HOMEPAGE_URL "https://nptel.ac.in/courses/106/105/106105151/"
             LANGUAGES CXX)
 
@@ -59,5 +59,6 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
     add_subdirectory(test)
 else()
     add_subdirectory(app)
-    add_executable(${CMAKE_PROJECT_NAME} $<TARGET_OBJECTS:stack> $<TARGET_OBJECTS:main>)
+    add_executable(reverse_string $<TARGET_OBJECTS:stack> $<TARGET_OBJECTS:main_reverse_string>)
+    add_executable(app_complex $<TARGET_OBJECTS:complex> $<TARGET_OBJECTS:main_complex>)
 endif()
