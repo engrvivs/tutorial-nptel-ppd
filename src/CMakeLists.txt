@@ -1,0 +1,6 @@
+set(TARGET_STACK "stack")
+add_library(${TARGET_STACK} OBJECT Stack.cxx)
+target_include_directories(${TARGET_STACK} PRIVATE ${PROJECT_SOURCE_DIR}/include)
+if(ENABLE_COVERAGE)
+    target_compile_options(${TARGET_STACK} BEFORE PRIVATE --coverage PRIVATE -O0)
+endif()
