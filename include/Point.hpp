@@ -3,7 +3,7 @@
 
 class Point {
 private:
-  std::int16_t x_, y_;
+  std::int16_t x_ = 0, y_ = 0;
 
 public:
   Point() = default;
