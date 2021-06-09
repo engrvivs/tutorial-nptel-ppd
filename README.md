@@ -2,6 +2,18 @@
 
 Develop Status: [![Lines Of Code](https://tokei.rs/b1/github/XAMPPRocky/tokei?category=code)](https://github.com/engrvivs/tutorial-nptel-ppd) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/engrvivs/tutorial-nptel-ppd) [![Build Status](https://travis-ci.com/engrvivs/tutorial-nptel-ppd.svg?branch=main)](https://travis-ci.com/engrvivs/tutorial-nptel-ppd) [![codecov](https://codecov.io/gh/engrvivs/tutorial-nptel-ppd/branch/main/graph/badge.svg?token=trEpzuvPIS)](https://codecov.io/gh/engrvivs/tutorial-nptel-ppd)
 
+## Build Process
+
+```bash
+$ ./script/build.sh
+Type 0 for normal build ELSE 1 to check unit Tests and get Code Coverage: 0
+...
+
+$ ./buildMake/create_rect
+```
+
+## Notes
+
 - Implementations, as discussed during the course
 
 - `l`-value refers to address of the variable

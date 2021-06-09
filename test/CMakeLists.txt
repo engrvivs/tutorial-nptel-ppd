@@ -14,7 +14,7 @@ add_library(${TARGET_TEST_STACK} OBJECT Stack.cxx)
 target_include_directories(${TARGET_TEST_STACK} PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_link_libraries(${TARGET_TEST_STACK} PRIVATE Catch2::Catch2)
 
-set(TARGET_TEST_STRING "test_sting")
+set(TARGET_TEST_STRING "test_string")
 add_library(${TARGET_TEST_STRING} OBJECT String.cxx)
 target_include_directories(${TARGET_TEST_STRING} PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_link_libraries(${TARGET_TEST_STRING} PRIVATE Catch2::Catch2)
