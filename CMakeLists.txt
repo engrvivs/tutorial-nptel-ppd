@@ -28,6 +28,7 @@ project(${MY_PROJECT_NAME} VERSION ${${MY_PROJECT_NAME}_VERSION_STRING}
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(BUILD_TESTING "Build on the test executable" OFF)
+option(DEBUG_MODE "Build with debugging messages" OFF)
 option(ENABLE_COVERAGE "Collect code coverage from test library" OFF)
 
 # if this is the main project
@@ -61,4 +62,5 @@ else()
     add_subdirectory(app)
     add_executable(reverse_string $<TARGET_OBJECTS:stack> $<TARGET_OBJECTS:main_reverse_string>)
     add_executable(app_complex $<TARGET_OBJECTS:complex> $<TARGET_OBJECTS:main_complex>)
+    add_executable(create_string $<TARGET_OBJECTS:string> $<TARGET_OBJECTS:main_create_string>)
 endif()
