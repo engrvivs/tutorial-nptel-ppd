@@ -28,8 +28,8 @@ project(${MY_PROJECT_NAME} VERSION ${${MY_PROJECT_NAME}_VERSION_STRING}
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(BUILD_TESTING "Build on the test executable" OFF)
-option(DEBUG_MODE "Build with debugging messages" OFF)
 option(ENABLE_COVERAGE "Collect code coverage from test library" OFF)
+option(DEBUG_MODE "Build with debugging messages" OFF)
 
 # if this is the main project
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
