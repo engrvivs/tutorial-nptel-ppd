@@ -7,8 +7,8 @@ lcov_file=code_coverage.info
 #cd ..
 
 # Clean previous builds
-rm -rf build*/
-#cmake --build ${build_folder} --target clean
+#rm -rf build*/
+cmake --build ${build_folder} --target clean
 
 # Configure
 # -DCMAKE_INSTALL_PREFIX:PATH=install -DCMAKE_BUILD_TYPE=Debug --trace OR --trace-source="filename" --trace-expand
