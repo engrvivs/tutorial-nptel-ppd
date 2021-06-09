@@ -14,6 +14,6 @@ String::~String() {
   std::free(p_str_);
 }
 
-void String::print() { std::cout << "(" << p_str_ << ": " << len_ << ")"; }
+void String::print() { std::cout << p_str_; }
 
 std::size_t String::length() const { return len_; }
